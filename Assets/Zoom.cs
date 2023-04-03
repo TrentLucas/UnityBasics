@@ -8,8 +8,8 @@ public class Zoom : MonoBehaviour
 
     private float targetZoom;
     private float zoomFactor = 3f;
-    [SerializeField] private float zoomLerpSpeed = 10f;
-    [SerializeField] private float minZoom = 2f;
+    [SerializeField] private float zoomLerpSpeed = 20f;
+    [SerializeField] private float minZoom = .1f;
     [SerializeField] private float maxZoom = 20f;
     private float currentZoom;
 
@@ -23,14 +23,14 @@ public class Zoom : MonoBehaviour
     {
         currentZoom = -Input.GetAxis("Mouse ScrollWheel");
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            currentZoom += 0.1f;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             currentZoom -= 0.1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            currentZoom += 0.1f;
         }
 
         targetZoom -= currentZoom * zoomFactor;

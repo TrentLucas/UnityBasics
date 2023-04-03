@@ -443,7 +443,7 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 32
-  jumpCountMax: 0
+  jumpCountMax: 3
 --- !u!61 &1440260169
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class Player3 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb2d.velocity = Vector2.up * jumpPower;
+            rb2d.rotation = jumpPower;
         }
     }
 

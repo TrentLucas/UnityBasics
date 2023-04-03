@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7d1edaff5758743a99c722e0d49f50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomLerpSpeed: 10
-  minZoom: 2
+  zoomLerpSpeed: 20
+  minZoom: 0.1
   maxZoom: 20
 --- !u!1001 &6195319346237032100
 PrefabInstance:

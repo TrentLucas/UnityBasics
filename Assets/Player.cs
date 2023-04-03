@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         rb2d = rb2d = GetComponent<Rigidbody2D>();
         boxCollider2D = transform.GetComponent<BoxCollider2D>();
-        jumpCountMax = 2;
+        jumpCountMax = 3;
     }
 
     void Update()
@@ -41,6 +41,11 @@ public class Player : MonoBehaviour
                     if (jumpCount < jumpCountMax)
                     {
                         rb2d.velocity = Vector2.up * jumpPower;
+                        jumpCount++;
+                    }
+
+                    if (jumpCount == jumpCountMax) {
+                        rb2d.velocity = Vector2.up * jumpPower * -1;
                         jumpCount++;
                     }
                 }

@@ -41,12 +41,12 @@ public class Player2 : MonoBehaviour
 
         if (Input.GetKey("d"))
         {
-            pos.x += speed * Time.deltaTime;
+            pos.x += 2 * speed * Time.deltaTime;
         }
 
         if (Input.GetKey("a"))
         {
-            pos.x -= speed * Time.deltaTime;
+            pos.x -= 2 * speed * Time.deltaTime;
         }
 
         transform.position = pos;
@@ -58,7 +58,23 @@ public class Player2 : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D re = bullet.GetComponent<Rigidbody2D>();
-            re.velocity = firePoint.up * bulletSpeed;
+            int a = Random.Range(1, 5);
+            if (a == 1)
+            {
+                re.velocity = firePoint.up * bulletSpeed;
+            }
+            if (a == 2)
+            {
+                re.velocity = -firePoint.up * bulletSpeed;
+            }
+            if (a == 3)
+            {
+                re.velocity = -firePoint.right * bulletSpeed;
+            }
+            if (a == 4)
+            {
+                re.velocity = firePoint.right * bulletSpeed;
+            }
             nextFire = Time.time + cooldown;
         }
     }

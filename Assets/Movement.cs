@@ -22,12 +22,12 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
-            pos.x += speed * Time.deltaTime;
+            pos.x += 2 * speed * Time.deltaTime;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            pos.x -= speed * Time.deltaTime;
+            pos.x -= 2 * speed * Time.deltaTime;
         }
 
         transform.position = pos;
